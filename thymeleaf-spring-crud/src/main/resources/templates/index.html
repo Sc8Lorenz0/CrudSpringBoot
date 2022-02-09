@@ -19,6 +19,7 @@
         <table border="1" class="table table-striped table-responsive-md">
             <thead>
                 <tr>
+                <th>Id</th>
                     <th>Nome del Corso</th>
                     <th>Luogo del Corso</th>
                     <th>Data Inizio e Fine del Corso</th>
@@ -28,6 +29,7 @@
             </thead>
             <tbody>
                 <tr th:each="corso : ${listCorsi}">
+                <td th:text="${corso.id}"></td>
                     <td th:text="${corso.nomeCorso}"></td>
                     <td th:text="${corso.luogoCorso}"></td>
                     <td th:text="${corso.dataInizioFineCorso}"></td>
