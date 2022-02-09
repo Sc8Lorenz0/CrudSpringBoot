@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Stai modificando il corso</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Modifica i dati di un corso</h1>
+        <hr>
+        <h2>Modifica il tuo corso</h2>
+
+        <form action="#" th:action="@{/saveCorso}" th:object="${corso}" method="POST">
+
+            <!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{id}" />
+
+            <input type="text" th:field="*{nomeCorso}" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{luogoCorso}" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{dataInizioFineCorso}" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{oreCorso}" class="form-control mb-4 col-4">
+            
+
+            <button type="submit" class="btn btn-info col-2"> Aggiorna le modifiche</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/}"> Ritorna alla lista dei corsi</a>
+    </div>
+</body>
+
+</html>
